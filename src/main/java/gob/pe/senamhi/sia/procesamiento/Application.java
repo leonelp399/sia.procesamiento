@@ -10,6 +10,8 @@ import java.util.ResourceBundle;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 //import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.ResponseEntity;
@@ -19,13 +21,13 @@ import com.google.gson.Gson;
 import gob.pe.senamhi.sia.procesamiento.Beans.Producto;
 
 
-//@SpringBootApplication
+@SpringBootApplication
 public class Application {
 
 	private static final Logger LOGGER = LogManager.getLogger(Application.class);
 	
 	public static void main(String[] args) {
-//		SpringApplication.run(Application.class, args);
+		SpringApplication.run(Application.class, args);
 		try {
 			List<Producto> list = getProductos();
 			for(Producto p : list) {
